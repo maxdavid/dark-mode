@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDarkMode } from '../hooks';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = props => {
   const { darkMode, setDarkMode } = props;
@@ -10,7 +10,20 @@ const Navbar = props => {
 
   return (
     <nav className='navbar'>
-      <h1>Crypto Tracker</h1>
+      <div className='coin-links'>
+        <Link exact to='/'>
+          <h1 className='site-title'>Crypto Tracker</h1>
+        </Link>
+        <NavLink className='coin-link' to='/bitcoin'>
+          Bitcoin
+        </NavLink>
+        <NavLink className='coin-link' to='/ethereum'>
+          Ethereum
+        </NavLink>
+        <NavLink className='coin-link' to='/altcoins'>
+          Other
+        </NavLink>
+      </div>
       <div className='dark-mode-toggler'>
         <div className='dark-mode-icon-container'>
           <div id='dark-mode-icon' className={darkMode ? 'hide' : ''} />

@@ -239,6 +239,17 @@ body {
   transition: all 0.2s linear;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.1s linear;
+}
+
+a:hover {
+  opacity: 0.5;
+  transition: opacity 0.1s linear;
+}
+
 .dark-mode {
   background-color: #222;
   color: #f0f0f0;
@@ -285,4 +296,25 @@ body {
   content: var(--icon-moon-dark);
   width: 2em;
   height: 2em;
+}
+
+.coin-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.coin-link {
+  margin-right: 20px;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+a.active {
+  opacity: 0.5;
+}
+
+h1.site-title {
+  margin-right: 23px;
+  margin-bottom: 0px;
 }
