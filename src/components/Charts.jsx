@@ -2,7 +2,6 @@ import React from 'react';
 import Chart from './Chart';
 
 const Charts = ({ coinData }) => {
-  console.log(coinData);
   return (
     <div className='charts'>
       {coinData.map(coin => (
