@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -136,7 +136,7 @@ table {
 
 html {
   font-size: 62.5%;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
 }
 
@@ -183,6 +183,7 @@ img {
   height: 20px;
   position: relative;
   width: 40px;
+  cursor: pointer;
 }
 
 .toggle {
@@ -225,4 +226,63 @@ img {
 
 .coin__logo {
   width: 50px;
+}
+
+.dark-mode-toggler {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+
+body {
+  transition: all 0.2s linear;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #f0f0f0;
+  transition: all 0.2s linear;
+}
+
+.dark-mode-icon-container {
+  padding-right: 5px;
+}
+
+:root {
+  --icon-moon-dark: url('data:image/svg+xml,\
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6 -6 12 12"> \
+  <defs> \
+      <mask id="earth"> \
+          <rect fill="white" x="-5" y="-5" width="10" height="10"></rect> \
+         <circle fill="black" cx="3.141592654" r="5"/> \
+      </mask> \
+  </defs> \
+  <circle r="5" fill="white" mask="url(%23earth)" transform="rotate(-23.5)"/> \
+</svg>');
+  --icon-moon-light: url('data:image/svg+xml,\
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-6 -6 12 12"> \
+  <defs> \
+      <mask id="earth"> \
+          <rect fill="white" x="-5" y="-5" width="10" height="10"></rect> \
+         <circle fill="black" cx="3.141592654" r="5"/> \
+      </mask> \
+  </defs> \
+  <circle r="5" fill="black" mask="url(%23earth)" transform="rotate(-23.5)"/> \
+</svg>');
+}
+
+.hide {
+  display: none;
+}
+
+#dark-mode-icon {
+  content: var(--icon-moon-light);
+  width: 2em;
+  height: 2em;
+}
+#light-mode-icon {
+  content: var(--icon-moon-dark);
+  width: 2em;
+  height: 2em;
 }
